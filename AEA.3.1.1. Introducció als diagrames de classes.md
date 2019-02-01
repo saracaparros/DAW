@@ -92,14 +92,17 @@ class Reserves{
     - Boolean CotxeEntregat
 }
 class Garatges{
+    - Int Codi
+    - String Nom
 }
 class Agència{
+    - Int Codi
 }
 
-Clients "1" --> "*" Reserves : fa
-Reserves "1" *-- "*" Cotxes : conté
+Clients "1" --> "1..*" Reserves : fa
+Reserves "1" *-- "1..*" Cotxes : conté
 Cotxes "*" -- "1" Garatges : té
-Reserves "*" --o "1" Agència : es fan
+Reserves "1..*" --o "1" Agència : es fan
 
 @enduml
 ```

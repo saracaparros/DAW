@@ -10,9 +10,52 @@
 -	Els carrets estan composats per ítems, que tenen codi, quantitat demanada i preu. 
 -	Aquests ítems es poden afegir o eliminar. 
 
+```
 @startuml
-@enduml
 
+class Botiga
+
+class Client{
+    - String Nom
+    - String AdrecaEnviament
+    - String AdrecaCobro
+    - String Email
+    + Crear()
+    + Editar()
+    + Eliminar()
+}
+class ClientPreferent{
+    - String Descompte
+}
+class Targeta{
+    - String Propietari
+    - Int Numero
+    - Date Validesa
+}
+class Carrito{
+    - Float Preu
+    + Comprar()
+    + Crear()
+    + Cancelar()
+    + Editar()
+}
+class Items{
+    - String Codi
+    - Int QuantitatDemanada
+    - Float Preu
+    + Afegir()
+    + Editar()
+}
+
+Botiga "1" o-- "*" Client : té
+Client <|-- ClientPreferent : pot ser
+Client "1" -> "1" Targeta : té
+Client "1" ..> "*" Carrito : pot tenir
+Carrito "1" *-- "*" Items : té
+Botiga "1" *-- "*" Items : té
+
+@enduml
+```
 
 
 ## 2. Empresa de lloguer de cotxes

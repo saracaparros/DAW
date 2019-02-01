@@ -12,7 +12,6 @@
 
 @startuml
 @enduml
-![cached image](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://github.com/saracaparros/DAW/blob/master/botigaonline.txt)
 
 
 

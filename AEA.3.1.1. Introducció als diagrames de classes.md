@@ -12,6 +12,8 @@
 
 @startuml
 @enduml
+![cached image](http://www.plantuml.com/plantuml/proxy?src=https://github.com/saracaparros/DAW/blob/master/botigaonline.txt)
+
 
 
 ## 2. Empresa de lloguer de cotxes

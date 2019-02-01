@@ -1,8 +1,8 @@
-######Sara Caparrós amb Pau Cànovas (DAW1 - Curs 2018/2019)
+###### Sara Caparrós amb Pau Cànovas (DAW1 - Curs 2018/2019)
 
-#AEA.3.1.1. Introducció als diagrames de classes
+# AEA.3.1.1. Introducció als diagrames de classes
 
-##1. Botiga de venta on-line
+## 1. Botiga de venta on-line
 1. Una botiga de venta on-line, desitja un programa on:
 -	Pugui crear, editar o eliminar clients de la seva base de dades. Cada client ha de tenir un nom, una adreça d’enviament, una adreça de  cobrament i un e-mail. A més, la botiga té uns clients preferencials, que a més de totes les dades dels clients, també tenen emmagatzemat un descompte que se’ls hi haurà d’aplicar a cada comanda realitzada. 
 -	Cada client posseeix una targeta que els hi permet validar-se i a la que s’indica qui és el seu propietari, quin és el seu número i fins quan té validesa. 
@@ -13,7 +13,7 @@
 @startuml
 @enduml
 
-##2. Empresa de lloguer de cotxes
+## 2. Empresa de lloguer de cotxes
 2.Una empresa dedicada al lloguer de cotxes, desitja un programari tenint en compte que:
 -	Un determinat client pot tenir en un moment donat diverses reserves fetes. 
 -	De cada client es desitja emmagatzemar el seu DNI, nom, adreça i telèfon. 
@@ -26,7 +26,7 @@
 @startuml
 @enduml
 
-##3. Cadena d'agències de viatges
+## 3. Cadena d'agències de viatges
 3.Una cadena d'agències de viatges desitja disposar d’un programari que contempli informació relativa a l'hostalatge i vols dels turistes que la contracten. Les dades a tenir en compte són:
 -	La cadena d'agències està composta per un conjunt de sucursals. Cada sucursal ve definida pel codi de sucursal, adreça i telèfon.
 -	La cadena té contractats una sèrie d'hotels de forma exclusiva. Cada hotel estarà definit pel codi d'hotel, nom, adreça, ciutat, telèfon i nombre de places disponibles.

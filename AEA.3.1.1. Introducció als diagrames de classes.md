@@ -68,8 +68,41 @@ Botiga "1" *-- "*" Items : té
 -	Tots els cotxes tenen sempre assignat un determinat garatge que no pot canviar. De cada cotxe es requereix la matrícula, el color i la marca. 
 -	Cada reserva es realitza en una agència determinada.
  
+```
 @startuml
+
+class Clients{
+    - String DNI
+    - String Nom
+    - String Adreça
+    - String Telèfon
+    - String CodiÚnic
+}
+class Cotxes{
+    - String Matrícula
+    - String Color
+    - String Marca
+    - Float PreuLloguer
+    - Float LitresBenzinaReserva
+}
+class Reserves{
+    - Date DataInici
+    - Date DataFi
+    - Float PreuTotal
+    - Boolean CotxeEntregat
+}
+class Garatges{
+}
+class Agència{
+}
+
+Clients "1" --> "*" Reserves : fa
+Reserves "1" *-- "*" Cotxes : conté
+Cotxes "*" -- "1" Garatges : té
+Reserves "*" --o "1" Agència : es fan
+
 @enduml
+```
 
 ## 3. Cadena d'agències de viatges
 3.Una cadena d'agències de viatges desitja disposar d’un programari que contempli informació relativa a l'hostalatge i vols dels turistes que la contracten. Les dades a tenir en compte són:
@@ -82,6 +115,68 @@ D'altra banda, cal tenir en compte la següent informació:
 -	A l'hora de viatjar el turista pot triar qualsevol dels vols que ofereix la cadena, i en quina classe (turista o primera) desitja viatjar.
 -	D'igual manera, el turista es pot allotjar en qualsevol dels hotels que ofereix la cadena, i triar el règim d'hostalatge (mitja pensió o pensió completa). Sent significativa la data d'arribada i de partida.
 
+```
 @startuml
+
+class CadenaAgencies{
+}
+class Sucursals{
+    - Int Codi
+    - String Adreça
+    - String Telèfon
+}
+class Hotels{
+    - Int Codi
+    - String Nom
+    - String Adreça
+    - String Ciutat
+    - String Telèfon
+    - Int QtPlaçesDisponibles
+}
+class Vols{
+    - Int NumVol
+    - Timestamp DataHora
+    - String Origen
+    - String Destí
+    - Int PlaçesTotals
+    - Int PlaçesTurista
+}
+class Turista{
+    - Int Codi
+    - String Nom
+    - String Cognoms
+    - String Adreça
+    - String Telèfon
+}
+class Reserva{
+    - Int Codi Turista
+    - Int Codi Sucursal
+    - String codi Reserva
+}
+class ReservaVol {
+    - Boolean turista o primera
+}
+class ReservaHotel {
+    - Boolean MP o PC
+    - Date data d'arribada
+    - Date data de partida
+}
+
+
+CadenaAgencies "1" --o "*" Sucursals : té
+CadenaAgencies "1" --* "*" Hotels :contracta
+CadenaAgencies "1" --* "*" Vols : contracta
+CadenaAgencies --o Turista
+
+Turista "1" -- "1" Reserva : fa
+Sucursals "1" -- "*" Reserva : controla
+
+Reserva <|-- ReservaVol
+Reserva <|-- ReservaHotel
+
+ReservaHotel -- Hotels
+ReservaVol -- Vols
+
 @enduml
+```
  

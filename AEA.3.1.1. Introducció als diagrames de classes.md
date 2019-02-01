@@ -77,6 +77,9 @@ class Clients{
     - String Adreça
     - String Telèfon
     - String CodiÚnic
+    + afegir()
+    + editar()
+    + esborrar()
 }
 class Cotxes{
     - String Matrícula
@@ -84,19 +87,31 @@ class Cotxes{
     - String Marca
     - Float PreuLloguer
     - Float LitresBenzinaReserva
+    + afegir()
+    + editar()
+    + esborrar()
 }
 class Reserves{
     - Date DataInici
     - Date DataFi
     - Float PreuTotal
     - Boolean CotxeEntregat
+    + afegir()
+    + editar()
+    + esborrar()
 }
 class Garatges{
     - Int Codi
     - String Nom
+    + afegir()
+    + editar()
+    + esborrar()
 }
 class Agència{
     - Int Codi
+    + afegir()
+    + editar()
+    + esborrar()
 }
 
 Clients "1" --> "1..*" Reserves : fa

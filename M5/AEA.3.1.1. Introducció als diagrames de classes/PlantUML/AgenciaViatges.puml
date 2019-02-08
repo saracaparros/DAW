@@ -1,0 +1,62 @@
+@startuml
+
+class CadenaAgencies{
+}
+class Sucursals{
+    - Int Codi
+    - String Adreça
+    - String Telèfon
+}
+class Hotels{
+    - Int Codi
+    - String Nom
+    - String Adreça
+    - String Ciutat
+    - String Telèfon
+    - Int QtPlaçesDisponibles
+}
+class Vols{
+    - Int NumVol
+    - Timestamp DataHora
+    - String Origen
+    - String Destí
+    - Int PlaçesTotals
+    - Int PlaçesTurista
+}
+class Turista{
+    - Int Codi
+    - String Nom
+    - String Cognoms
+    - String Adreça
+    - String Telèfon
+}
+class Reserva{
+    - Int Codi Turista
+    - Int Codi Sucursal
+    - String codi Reserva
+}
+class ReservaVol {
+    - Boolean turista o primera
+}
+class ReservaHotel {
+    - Boolean MP o PC
+    - Date data d'arribada
+    - Date data de partida
+}
+
+
+CadenaAgencies "1" --o "*" Sucursals : té
+CadenaAgencies "1" --* "*" Hotels :contracta
+CadenaAgencies "1" --* "*" Vols : contracta
+CadenaAgencies --o Turista
+
+Turista "1" -- "1" Reserva : fa
+Sucursals "1" -- "*" Reserva : controla
+
+Reserva <|-- ReservaVol
+Reserva <|-- ReservaHotel
+
+ReservaHotel -- Hotels
+ReservaVol -- Vols
+
+@enduml

@@ -10,52 +10,8 @@
 -	Els carrets estan composats per ítems, que tenen codi, quantitat demanada i preu. 
 -	Aquests ítems es poden afegir o eliminar. 
 
-```
-@startuml
-
-class Botiga
-
-class Client{
-    - String Nom
-    - String AdrecaEnviament
-    - String AdrecaCobro
-    - String Email
-    + Crear()
-    + Editar()
-    + Eliminar()
-}
-class ClientPreferent{
-    - String Descompte
-}
-class Targeta{
-    - String Propietari
-    - Int Numero
-    - Date Validesa
-}
-class Carrito{
-    - Float Preu
-    + Comprar()
-    + Crear()
-    + Cancelar()
-    + Editar()
-}
-class Items{
-    - String Codi
-    - Int QuantitatDemanada
-    - Float Preu
-    + Afegir()
-    + Editar()
-}
-
-Botiga "1" o-- "*" Client : té
-Client <|-- ClientPreferent : pot ser
-Client "1" -> "1" Targeta : té
-Client "1" ..> "*" Carrito : pot tenir
-Carrito "1" *-- "*" Items : té
-Botiga "1" *-- "*" Items : té
-
-@enduml
-```
+![BotigaVentaOnline.png](./img/BotigaVentaOnline.png)
+[PlantUML Botiga](./PlantUML/BotigaVentaOnline.puml "BotigaVentaOnline.puml")
 
 
 ## 2. Empresa de lloguer de cotxes
@@ -121,6 +77,9 @@ Reserves "1..*" --o "1" Agència : es fan
 
 @enduml
 ```
+
+![EmpresaLloguerCotxes.png](./img/EmpresaLloguerCotxes.png)
+[PlantUML Cotxes](./PlantUML/EmpresaLloguerCotxes.puml "EmpresaLloguerCotxes.puml")
 
 ## 3. Cadena d'agències de viatges
 3.Una cadena d'agències de viatges desitja disposar d’un programari que contempli informació relativa a l'hostalatge i vols dels turistes que la contracten. Les dades a tenir en compte són:
@@ -198,3 +157,6 @@ ReservaVol -- Vols
 @enduml
 ```
  
+
+![AgenciaViatges.png](./img/AgenciaViatges.png)
+[PlantUML Agencia Viatges](./PlantUML/AgenciaViatges.puml "AgenciaViatges.puml")

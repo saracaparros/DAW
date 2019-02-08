@@ -1,0 +1,32 @@
+@startuml
+
+class Clients{
+    - String DNI
+    - String Nom
+    - String Adreça
+    - String Telèfon
+    - String CodiÚnic
+}
+class Cotxes{
+    - String Matrícula
+    - String Color
+    - String Marca
+    - Float PreuLloguer
+}
+class Reserves{
+    - Date DataInici
+    - Date DataFi
+    - Float PreuTotal
+    - Boolean CotxeEntregat
+}
+class Garatges{
+}
+class Agència{
+}
+
+Clients "1" --> "*" Reserves : fa
+Reserves "1" *-- "*" Cotxes : conté
+Cotxes "1" -- "1" Garatges : té
+Reserves "*" --o "1" Agència
+
+@enduml

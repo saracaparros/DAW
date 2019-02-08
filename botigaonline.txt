@@ -1,6 +1,0 @@
-@startuml
-  class Botiga{
-  }
-  
-  Botiga -- Animals
-@enduml

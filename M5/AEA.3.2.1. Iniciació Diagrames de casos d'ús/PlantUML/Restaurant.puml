@@ -1,13 +1,14 @@
 @startuml
 :Client: as C
 :Empleat: as E
+:<<Service>>System: as SS
 
 C -- (Creació comanda)
 (Creació comanda) ..> (Seguiment comanda) : <<include>>
 (Seguiment comanda) <.. (Modificar comanda) : <<extend>>
 
 E -- (Repartir comandes)
-(Repartir comandes) ..> (Crea informes) : <<extend>>
+SS --> (Crea informes)
 
 (Comanda) -- (Creació comanda)
 (Comanda) -- (Repartir comandes)

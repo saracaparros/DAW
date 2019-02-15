@@ -1,0 +1,15 @@
+@startuml
+:Client: as C
+:Empleat: as E
+
+C -- (Creació comanda)
+(Creació comanda) ..> (Seguiment comanda) : <<include>>
+(Seguiment comanda) <.. (Modificar comanda) : <<extend>>
+
+E -- (Repartir comandes)
+(Repartir comandes) ..> (Crea informes) : <<extend>>
+
+(Comanda) -- (Creació comanda)
+(Comanda) -- (Repartir comandes)
+
+@enduml

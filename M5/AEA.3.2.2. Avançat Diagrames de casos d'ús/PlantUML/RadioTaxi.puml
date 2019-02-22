@@ -4,20 +4,22 @@
 :Xòfers: as X
 :Gerent: as G
 
-A -- (Donar d'alta nous clients)
-A -- (Donar d'alta reserves de viatges) 
-(Donar d'alta reserves de viatges) .. X : include
-(Donar d'alta reserves de viatges) .. (Adreça d'origen i destí) : include
-(Donar d'alta reserves de viatges) .. (Data i Hora sortida) : include
-A -- (Cancelar reserves)
-A -- (Confirmar reserves)
+A --> (Donar d'alta nous clients)
+A --> (Donar d'alta reserves de viatges)
+(Donar d'alta reserves de viatges) ..> (Xòfer assignat) : include
+(Donar d'alta reserves de viatges) ..> (Adreça d'origen i destí) : include
+(Donar d'alta reserves de viatges) ..> (Data i Hora sortida) : include
+A --> (Cancelar reserves)
+(Donar d'alta reserves de viatges) <.. (Cancelar reserves) : extends
+(Donar d'alta reserves de viatges) <.. (Confirmar reserves) : extends
+A --> (Confirmar reserves)
 
-X -- (Consultar reserves)
+X --> (Consultar reserves)
 
-G -- (Donar d'alta nous xòfers)
-G -- (Liquidar les comissions mensualment)
-G -- (Consultar informació)
-X -- (Consultar informació)
+G --> (Donar d'alta nous xòfers)
+G --> (Liquidar les comissions mensualment)
+G --> (Consultar informació)
+X --> (Consultar informació)
 
 
 @enduml

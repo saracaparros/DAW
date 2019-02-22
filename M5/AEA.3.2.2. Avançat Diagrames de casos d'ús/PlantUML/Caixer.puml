@@ -1,11 +1,12 @@
 @startuml
 :Client: as C
 :Empleat: as E
+(Identificar-se) as I
 
-C -- (Identificar-se)
-C -- (Canviar el pin)
-C -- (Treure diners)
-C -- (Consultar el saldo)
-C -- (Consultar els últims moviments)
-E -- (Reposa diners)
+C --> I
+I <.. (Canviar el pin) : include
+I <.. (Treure diners) : include
+I <.. (Consultar el saldo) : include
+I <.. (Consultar els últims moviments): include
+E --> (Reposa diners)
 @enduml

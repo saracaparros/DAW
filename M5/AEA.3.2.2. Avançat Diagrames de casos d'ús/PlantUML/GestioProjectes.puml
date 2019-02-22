@@ -18,6 +18,6 @@ upd ..> (Canviar informació sobre les tasaques) : include
 upd ..> (Canviar els recursos associats) : include
 
 Admin --> sendMail
-sendMail -left-> Equip
+sendMail -l-> Equip
 
 @enduml

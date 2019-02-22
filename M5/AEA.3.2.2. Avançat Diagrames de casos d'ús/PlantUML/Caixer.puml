@@ -8,5 +8,6 @@ I <.. (Canviar el pin) : include
 I <.. (Treure diners) : include
 I <.. (Consultar el saldo) : include
 I <.. (Consultar els últims moviments): include
-E --> (Reposa diners)
+E --> (Reposar diners)
+
 @enduml

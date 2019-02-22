@@ -3,12 +3,15 @@
 :Administratius: as A
 :Xòfers: as X
 :Gerent: as G
+usecase GuardarDades as "Guardar dades
+--
+Adreça d'origen i destí
+Data i hora de sortida
+Xòfer disponible"
 
 A --> (Donar d'alta nous clients)
 A --> (Donar d'alta reserves de viatges)
-(Donar d'alta reserves de viatges) ..> (Xòfer assignat) : include
-(Donar d'alta reserves de viatges) ..> (Adreça d'origen i destí) : include
-(Donar d'alta reserves de viatges) ..> (Data i Hora sortida) : include
+(Donar d'alta reserves de viatges) ..> GuardarDades : include
 A --> (Cancelar reserves)
 (Donar d'alta reserves de viatges) <.. (Cancelar reserves) : extends
 (Donar d'alta reserves de viatges) <.. (Confirmar reserves) : extends

@@ -1,0 +1,23 @@
+@startuml
+
+:Administrador: as Admin
+:Equip: as Equip
+(Crear projecte) as add
+(Eliminar projecte) as del
+(Actualitzar projecte) as upd
+(Envia emails) as sendMail
+
+
+Admin -- add
+
+
+add <.. del : extends
+add <.. upd : extends
+
+upd ..> (Canviar informació sobre les tasaques) : include
+upd ..> (Canviar els recursos associats) : include
+
+Admin --> sendMail
+sendMail -left-> Equip
+
+@enduml

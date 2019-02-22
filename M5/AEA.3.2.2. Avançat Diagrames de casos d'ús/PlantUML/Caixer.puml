@@ -1,0 +1,11 @@
+@startuml
+:Client: as C
+:Empleat: as E
+
+C -- (Identificar-se)
+C -- (Canviar el pin)
+C -- (Treure diners)
+C -- (Consultar el saldo)
+C -- (Consultar els últims moviments)
+E -- (Reposa diners)
+@enduml

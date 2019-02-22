@@ -1,4 +1,4 @@
-###### Sara Caparrós amb Jose Alberto Torrents (Restaurant) (DAW1 - Curs 2018/2019)
+###### Sara Caparrós amb Jose Alberto Torrents (DAW1 - Curs 2018/2019)
 
 # AEA.3.2.1. Iniciació Diagrames de casos d'ús
 

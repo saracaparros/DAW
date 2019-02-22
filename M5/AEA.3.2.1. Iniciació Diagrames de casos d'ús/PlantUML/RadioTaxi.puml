@@ -1,0 +1,23 @@
+@startuml
+
+:Administratius: as A
+:Xòfers: as X
+:Gerent: as G
+
+A -- (Donar d'alta nous clients)
+A -- (Donar d'alta reserves de viatges) 
+(Donar d'alta reserves de viatges) .. X : include
+(Donar d'alta reserves de viatges) .. (Adreça d'origen i destí) : include
+(Donar d'alta reserves de viatges) .. (Data i Hora sortida) : include
+A -- (Cancelar reserves)
+A -- (Confirmar reserves)
+
+X -- (Consultar reserves)
+
+G -- (Donar d'alta nous xòfers)
+G -- (Liquidar les comissions mensualment)
+G -- (Consultar informació)
+X -- (Consultar informació)
+
+
+@enduml

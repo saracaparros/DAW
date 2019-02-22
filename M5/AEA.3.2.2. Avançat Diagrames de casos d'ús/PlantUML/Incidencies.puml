@@ -1,0 +1,19 @@
+@startuml
+:Client: as Client
+:Tècnic: as Tecnic
+:Coordinador: as Coordinador
+
+
+Client -- (Crear Incidències)
+(Crear Incidències) <.. (Veure l'estat) : <<extend>>
+Tecnic -- (Solucionar Incidència)
+
+Coordinador -- (Assignarà Inicidències)
+
+
+(Crear Incidències).down.>(Incidències) : <<include>>
+(Incidències) <.up. (Solucionar Incidència) : <<include>>
+(Assignarà Inicidències) .down.> (Incidències) : <<include>>
+
+
+@enduml

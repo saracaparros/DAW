@@ -1,6 +1,6 @@
 ###### Sara Caparrós amb Jose Alberto Torrents (DAW1 - Curs 2018/2019)
 
-# AEA.3.2.1. Iniciació Diagrames de casos d'ús
+# AEA.3.2.2. Avançat Diagrames de casos d'ús
 
 ## 1. GestióProjectes
 1.	GestióProjectes: En una oficina es du a terme la gestió de projectes. La única persona que controla els projectes és l’administrador, les funcions del qual són les següents: 

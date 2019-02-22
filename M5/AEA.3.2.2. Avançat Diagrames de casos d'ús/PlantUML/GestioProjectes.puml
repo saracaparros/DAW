@@ -1,23 +1,24 @@
 @startuml
 
 :Administrador: as Admin
-:Equip: as Equip
 (Crear projecte) as add
 (Eliminar projecte) as del
 (Actualitzar projecte) as upd
-(Envia emails) as sendMail
+(Enviar emails) as sendMail
+(Buscar projecte) as search
 
 
-Admin -- add
+Admin --> add
+Admin --> del
+Admin --> upd
 
 
-add <.. del : extends
-add <.. upd : extends
+del ..> search : include
+upd ..> search : include
 
-upd ..> (Canviar informació sobre les tasaques) : include
-upd ..> (Canviar els recursos associats) : include
+upd <.. (Canviar informació sobre les tasaques) : extends
+upd <.. (Canviar els recursos associats) : extends
 
 Admin --> sendMail
-sendMail -l-> Equip
 
 @enduml

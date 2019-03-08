@@ -1,0 +1,24 @@
+@startuml
+title "Subministrador de cervesa"
+
+boundary sistema
+actor empleat
+actor client
+
+
+sistema -> sistema : crea nova fitxa de client
+sistema -> empleat : sol·licita nom client
+empleat -> client : pregunta el nom
+client -> empleat : diu el nom
+empleat -> sistema : introdueix el nom
+sistema -> empleat : sol·licita el cognom del client
+empleat -> client : pregunta el cognom
+client -> empleat : diu el cognom
+empleat -> sistema : introdueix el cognom
+sistema -> empleat : sol·licita el DNI
+empleat -> client : pregunta el DNI
+client -> empleat : diu el DNI
+empleat -> sistema : introdueix el DNI
+sistema -> sistema : guarda el registre de nou client
+
+@enduml

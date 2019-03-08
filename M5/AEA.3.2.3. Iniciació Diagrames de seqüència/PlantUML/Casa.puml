@@ -1,0 +1,20 @@
+@startuml
+title "Casa"
+
+participant casa as c
+participant habitacio as h
+participant finestra as f
+participant porta as p
+
+
+c -> c : new casa
+h -> h : new habitacio
+p -> p : new porta
+h -> p : set porta
+f -> f : new finestra
+h -> f : set finestra
+c -> h : afegirHabitacio
+c -> c : getNumHabitacions
+note right : "La casa té  c.getNumHabitacions()   habitacions"
+c -> c : mostrarHabitacions
+@enduml
